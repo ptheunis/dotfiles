@@ -49,16 +49,15 @@ install_latest_go() {
 	echo "Add $dir/go/bin to your path and optionally set GOBIN=~/.local/bin" 1>&2
 }
 
-sudo apt-get update && sudo apt-get -y install exa fzf gh tmux gcc build-essential \
+sudo pacman -Syu
+
+sudo pacman -Ss exa jq fzf github-cli tmux gcc build-essential \
 	procps curl file git nodejs neofetch bat lynx nmap pandoc jq pcregrep lynx \
        	make uidmap ruby python-is-python3 libcurses-perl tig zoxide figlet cmatrix \
 	build-essential libncurses5-dev libncursesw5-dev autoconf entr shellcheck
 
 echo "Installing Gum to make this script glamorous..."
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install gum
+sudo pacman -S gum
 
 function info() {
   gum style "$*"
@@ -119,31 +118,26 @@ link "$DOTFILES_PATH/home/.zshenv" "$HOME/.zshenv"
 link "$DOTFILES_PATH/scripts" "$CODE/scripts"
 
 title "Install latest Tmux Plugin Manager"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 title "Install latest NeoVim"
-sudo snap install --beta nvim --classic
+sudo pacman -S neovim
 
 title "Install NvChad"
+mv ~/.config/nvim ~/.config/nvim2
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+cp -a ~/.config/nvim2/. ~/.config/nvim
+rm -rf ~/.config/nvim2
 
 title "Install Tui-Feed"
 curl --proto '=https' --tlsv1.2 -sSLf "https://git.io/J1O0Z" | sh
 
 title "Install Glow"
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install glow
+sudo pacman -S glow
 
 title "Install Fish & set as default shell"
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update && sudo apt-get upgrade
-sudo apt install fish
+sudo pacman -S fish
 chsh -s /usr/bin/fish
-
-#title "Install oh-my-zsh"
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 title "Install starship.rs"
 curl -sS https://starship.rs/install.sh | sh

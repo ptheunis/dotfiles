@@ -1,0 +1,12 @@
+live_config_reload = true
+
+[env]
+TERM = "alacritty"
+
+[font]
+builtin_box_drawing = false
+size = 9
+
+[font.normal]
+family = "Ubuntu Mono Nerd Font Mono"
+style = "Regular"

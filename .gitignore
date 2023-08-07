@@ -11,6 +11,7 @@ setup/Brewfile.lock.json
 .config/.electron/
 .config/.gem/
 .config/docker/
+.config/lua
 .config/raycast/extensions/
 .config/gh/hosts.yml
 .config/hammerspoon/stackline/
@@ -23,7 +24,9 @@ setup/Brewfile.lock.json
 .config/gcloud
 .config/wix
 .config/gup/assets/
-
+.config/systemd/
+.config/pulse
+.config/wslu
 # zsh
 .config/zsh/ohmyzsh/
 .zsh_history

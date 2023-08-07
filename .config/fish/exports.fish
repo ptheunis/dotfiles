@@ -1,4 +1,5 @@
 # User Exports
+set -x XDG_CONFIG_HOME $HOME/.config
 
 set -x LANG en_US.UTF-8 # assuming apt install language-pack-en done
 set -x TZ America/New_York
