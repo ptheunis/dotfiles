@@ -1,0 +1,2 @@
+#!/bin/sh
+exec pae '$_=join " • ", @F' 

@@ -1,0 +1,9 @@
+[sources]
+arstechnica = "http://feeds.arstechnica.com/arstechnica/technology-lab"
+bbc_news = "http://feeds.bbci.co.uk/news/rss.xml"
+go_blog = "https://go.dev/blog/feed.atom"
+hacker_news = "https://news.ycombinator.com/rss"
+techcrunch = "https://techcrunch.com/feed"
+the_register = "http://www.theregister.co.uk/headlines.atom"
+theverge = "http://www.theverge.com/rss/frontpage"
+wired = "https://www.wired.com/feed/rss"

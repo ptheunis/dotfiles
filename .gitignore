@@ -1,0 +1,70 @@
+node_modules
+yarn.lock
+
+# setup
+setup/Brewfile.lock.json
+
+# .config
+.config/vscode/
+.config/zsh/.zcompdump
+.config/.fnm/
+.config/.electron/
+.config/.gem/
+.config/docker/
+.config/raycast/extensions/
+.config/gh/hosts.yml
+.config/hammerspoon/stackline/
+.config/configstore/
+.config/ranger/plugins/
+.config/tmux/plugins/
+.config/z/
+.config/yarn/link/
+.config/asciinema
+.config/gcloud
+.config/wix
+.config/gup/assets/
+
+# zsh
+.config/zsh/ohmyzsh/
+.zsh_history
+.config/zsh/.oh-my-zsh/
+.config/zsh/.zsh_sessions/
+.zcompdump*
+
+# nvim
+.config/nvim
+.config/nvim/sessions/
+.config/nvim/undodir/
+packer_compiled.lua
+
+# fish
+.config/fish/fishd.tmp.*
+.config/fish/fish_variables
+
+# 1password
+.config/op
+
+# misc
+error.log
+.config/gup
+debug.log
+
+lvim
+
+# spotify
+.config/spotify-tui/
+
+# lazygit
+**/lazygit/state.yml
+.config/nvim/.luarc.json
+
+# lnav
+.config/lnav/
+
+# wix
+bazelwrapper
+.config/k9s/config.yml
+.config/github-copilot/hosts.json
+.config/LazyVim
+.config/containers/podman/machine/qemu
+.config/containers
